@@ -3,7 +3,7 @@ import styles from './input.scss';
 
 const Input = (props) => {
   const { placeHolder } = props;
-  
+
   return (
     <div className={styles.input}>
       <input className={styles.input__box} type="text" placeholder={placeHolder} />
