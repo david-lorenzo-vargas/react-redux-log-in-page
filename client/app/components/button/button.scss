@@ -1,3 +1,13 @@
 .button {
- 
+  width: 150px;
+  margin: auto;
+  padding: 10px 30px;
+  border-radius: 25px;
+  text-align: center;
+  cursor: pointer;
+
+  &--blue {
+    background-color: rgb(75, 121, 241);
+    color: rgb(255, 255, 255);
+  }
 }
