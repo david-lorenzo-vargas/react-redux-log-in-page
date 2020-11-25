@@ -10,4 +10,8 @@
     background-color: rgb(75, 121, 241);
     color: rgb(255, 255, 255);
   }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, .7);
+  }
 }
