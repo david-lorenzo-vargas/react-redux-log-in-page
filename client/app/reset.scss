@@ -8,13 +8,16 @@
 
 .app {
   width: 60%;
+  height: 400px;
   background-color: rgb(231, 231, 231);
   margin: 50px auto;
+  border-radius: 25px;
 
   &__input {
     clip-path: polygon(23% 0, 100% 0, 100% 100%, 0% 100%);
     background-color: rgb(26, 80, 155);
     width: 70%;
+    height: 400px;
     padding: 50px;
     display: flex;
     flex-direction: column;
