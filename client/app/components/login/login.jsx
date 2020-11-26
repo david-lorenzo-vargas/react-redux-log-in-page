@@ -18,6 +18,8 @@ class Login extends React.Components() {
   }
 
   fetchUsers() {
+    this.fetchUsersPending();
+
     usersApi.get()
       .then(response => response.json())
       .then(data => this.fetchUsersSuccess(data))
@@ -26,6 +28,10 @@ class Login extends React.Components() {
 
   fetchUsersSuccess(data) {
     this.props.actions.fetchUsersSuccess(data);
+  }
+
+  fetchUsersPending() {
+    this.props.actions.fetchUsersPending();
   }
 
   render() {
