@@ -5,6 +5,7 @@
   border-radius: 25px;
   text-align: center;
   cursor: pointer;
+  user-select: none;
 
   &--blue {
     background-color: rgb(75, 121, 241);
