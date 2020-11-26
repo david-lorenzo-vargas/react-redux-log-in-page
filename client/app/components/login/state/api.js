@@ -12,7 +12,7 @@ const apiCall = (fn) => () => new Promise((resolve) => {
 
 const get = apiCall(() => ({
   success: true,
-  users,
+  usersArray: users,
 }));
 
 export default get;
