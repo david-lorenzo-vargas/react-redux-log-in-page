@@ -27,10 +27,12 @@ class Login extends React.Component {
   }
 
   fetchUsersSuccess(data) {
+    // eslint-disable-next-line react/destructuring-assignment
     this.props.actions.fetchUsersSuccess(data);
   }
 
   fetchUsersPending() {
+    // eslint-disable-next-line react/destructuring-assignment
     this.props.actions.fetchUsersPending();
   }
 
