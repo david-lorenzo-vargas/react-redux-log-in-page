@@ -3,6 +3,11 @@ import CONSTANTS from './users.constants';
 const defaultState = {
   fetchUserRequest: undefined,
   users: [],
+  currentUser: {
+    userName: '',
+    email: '',
+    password: '',
+  },
 };
 
 const fetchUsersSuccess = (state, action) => {
@@ -33,11 +38,21 @@ const fetchUsersRejected = (state) => {
   return newState;
 };
 
+const changeInput = (state, action) => {
+  const newState = {
+    ...state,
+    currentUser: action.payload,
+  };
+
+  return newState;
+};
+
 const loginReducer = (state = defaultState, action) => {
   switch (action.type) {
     case CONSTANTS.FETCH_USERS_SUCCESS: return fetchUsersSuccess(state, action);
     case CONSTANTS.FETCH_USERS_PENDING: return fetchUsersPending(state);
     case CONSTANTS.FETCH_USERS_REJECTED: return fetchUsersRejected(state);
+    case CONSTANTS.CHANGE_INPUT: return changeInput(state, action);
     default: return state;
   }
 };
