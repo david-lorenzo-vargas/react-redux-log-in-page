@@ -4,7 +4,7 @@ import Text from '../text';
 
 const Banner = () => (
   <>
-    <Logo size="medium" />
+    {/* <Logo size="medium" /> */}
     <Text
       text="blue vera"
       bold="bold"
