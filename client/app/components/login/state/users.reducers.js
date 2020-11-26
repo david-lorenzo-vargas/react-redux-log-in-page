@@ -9,7 +9,7 @@ const fetchUsersSuccess = (state, action) => {
   const newState = {
     ...state,
     fetchUserRequest: 'success',
-    users: action.payload.users,
+    users: action.payload.usersArray,
   };
 
   return newState;
