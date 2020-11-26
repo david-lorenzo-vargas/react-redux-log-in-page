@@ -1,3 +1,31 @@
 .text {
-  
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+  &--theme-blue {
+    color: rgb(26, 80, 155);
+  }
+
+  &--bold {
+    font-weight: bold;
+  }
+
+  &--size-big {
+    font-size: 20px;
+  }
+
+  &--size-extra-big {
+    font-size: 40px;
+  }
+
+  &--size-extra-small {
+    font-size: 10px;
+  }
+
+  &--type-uppercase {
+    text-transform: uppercase;
+  }
+
+  &--cursive {
+    font-style: italic;
+  }
 }
