@@ -11,14 +11,30 @@ class Login extends React.Component {
     super(props);
 
     this.handleButtonClick = this.handleButtonClick.bind(this);
+    this.handleUserNameInput = this.handleUserNameInput.bind(this);
+    this.handleEmailInput = this.handleEmailInput.bind(this);
+    this.handlepasswordInput = this.handlepasswordInput.bind(this);
   }
 
   handleButtonClick() {
     this.fetchUsers();
   }
 
+  handleUserNameInput(event) {
+    this.props.actions.changeInput(event.currentTarget.value);
+  }
+
+  handleEmailInput(event) {
+    this.props.actions.changeInput(event.currentTarget.value);
+  }
+
+  handlepasswordInput(event) {
+    this.props.actions.changeInput(event.currentTarget.value);
+  }
+
   fetchUsers() {
     this.fetchUsersPending();
+    this.handleUserNameInput();
 
     usersApi.get()
       .then(response => response.json())
@@ -39,9 +55,9 @@ class Login extends React.Component {
   render() {
     return (
       <>
-        <Input placeHolder="user name" type="text" />
-        <Input placeHolder="email" type="text" />
-        <Input placeHolder="password" type="password" />
+        <Input onChange={this.handleUserNameInput} placeHolder="user name" type="text" />
+        <Input onChange={this.handleEmailInput} placeHolder="email" type="text" />
+        <Input onChange={this.handlepasswordInput} placeHolder="password" type="password" />
         <Button onClick={this.handleButtonClick} theme="blue" text="Log In" />
       </>
     );
@@ -51,6 +67,7 @@ class Login extends React.Component {
 const mapStateToProps = (store) => ({
   state: {
     ...store.sendButton.users,
+    ...store.input,
   },
 });
 
