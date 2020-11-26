@@ -1,10 +1,8 @@
 import React from 'react';
-import Logo from '../logo';
 import Text from '../text';
 
 const Banner = () => (
   <>
-    {/* <Logo size="medium" /> */}
     <Text
       text="blue vera"
       bold="bold"
