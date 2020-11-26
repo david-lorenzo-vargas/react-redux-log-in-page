@@ -4,8 +4,8 @@ import styles from './input.scss';
 const Input = (props) => {
   const { placeHolder, type, onChange } = props;
 
-  const handleOnChange = () => {
-    onChange();
+  const handleOnChange = (event) => {
+    onChange(event.currentTarget.value);
   };
 
   return (
