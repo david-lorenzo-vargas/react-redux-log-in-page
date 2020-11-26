@@ -6,14 +6,14 @@ import Input from '../input';
 import Button from '../button';
 import usersApi from './state/api';
 
-class Login extends React.Components() {
+class Login extends React.Component {
   constructor(props) {
     super(props);
 
     this.handleButtonClick = this.handleButtonClick.bind(this);
   }
 
-  hanldeButtonClick() {
+  handleButtonClick() {
     this.fetchUsers();
   }
 
@@ -48,7 +48,7 @@ class Login extends React.Components() {
 
 const mapStateToProps = (store) => ({
   state: {
-    ...store.sendButton,
+    ...store.sendButton.users,
   },
 });
 
