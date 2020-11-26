@@ -13,8 +13,13 @@ const fetchUsersRejected = () => ({
   type: CONSTANTS.FETCH_USERS_REJECTED,
 });
 
+const changeInput = () => ({
+  type: CONSTANTS.CHANGE_INPUT,
+});
+
 export default {
   fetchUsersSuccess,
   fetchUsersPending,
   fetchUsersRejected,
+  changeInput,
 };
