@@ -20,26 +20,30 @@ class Login extends React.Component {
     this.fetchUsers();
   }
 
-  handleUserNameInput(event) {
-    this.props.actions.changeInput(event.currentTarget.value);
+  handleUserNameInput(value) {
+    // eslint-disable-next-line react/destructuring-assignment
+    this.props.actions.changeInput(value);
   }
 
-  handleEmailInput(event) {
-    this.props.actions.changeInput(event.currentTarget.value);
+  handleEmailInput(value) {
+    // eslint-disable-next-line react/destructuring-assignment
+    this.props.actions.changeInput(value);
   }
 
-  handlepasswordInput(event) {
-    this.props.actions.changeInput(event.currentTarget.value);
+  handlepasswordInput(value) {
+    // eslint-disable-next-line react/destructuring-assignment
+    this.props.actions.changeInput(value);
   }
+
+  fetchUsersRejected() {}
 
   fetchUsers() {
     this.fetchUsersPending();
-    this.handleUserNameInput();
 
     usersApi.get()
       .then(response => response.json())
       .then(data => this.fetchUsersSuccess(data))
-      .catch(() => this.fetchUsersRejected());
+      .catch((e) => this.fetchUsersRejected(e));
   }
 
   fetchUsersSuccess(data) {
