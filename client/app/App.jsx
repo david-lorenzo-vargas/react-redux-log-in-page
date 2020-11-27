@@ -1,7 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from '@reduxjs/toolkit';
-import actions from './components/login/state/users.actions';
 import { Row, Column } from './components/grid';
 import Login from './components/login';
 import Banner from './components/banner';
@@ -48,8 +46,4 @@ const mapStateToProps = (store) => ({
   },
 });
 
-const mapDispatchToProps = dispatch => ({
-  actions: bindActionCreators(actions, dispatch),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps)(App);
