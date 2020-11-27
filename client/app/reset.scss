@@ -26,6 +26,18 @@
     align-items: center;
   }
 
+  &__welcome {
+    width: 100%;
+    background-color: rgb(26, 80, 155);
+    border-radius: 0 25px 25px 0;
+    height: 400px;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   &__info {
     width: 30%;
     padding: 50px;
