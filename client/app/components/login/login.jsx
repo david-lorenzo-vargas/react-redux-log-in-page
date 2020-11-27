@@ -58,7 +58,6 @@ class Login extends React.Component {
   }
 
   handleButtonClick() {
-    console.log(this.checkIfUserExists());
     let userIslogged;
 
     if (this.checkIfUserExists()) {
@@ -114,12 +113,32 @@ class Login extends React.Component {
 
   render() {
     const { state } = this.props;
+    const { userTriedToLogIn } = state;
+    const wrongUser = !this.checkIfUserExists() && userTriedToLogIn;
 
     return (
       <>
-        <Input onChange={this.handleUserNameInput} placeHolder="user name" type="text" value={state.currentUserName} />
-        <Input onChange={this.handleEmailInput} placeHolder="email" type="text" value={state.currentUserEmail} />
-        <Input onChange={this.handlepasswordInput} placeHolder="password" type="password" value={state.currentUserPassword} />
+        <Input
+          onChange={this.handleUserNameInput}
+          placeHolder={wrongUser ? 'Wrong user name!' : 'User name'}
+          type="text"
+          value={state.currentUserName}
+          wrong={wrongUser ? 'wrong' : ''}
+        />
+        <Input
+          onChange={this.handleEmailInput}
+          placeHolder={wrongUser ? 'Email forgotten?' : 'Email'}
+          type="text"
+          value={state.currentUserEmail}
+          wrong={wrongUser ? 'wrong' : ''}
+        />
+        <Input
+          onChange={this.handlepasswordInput}
+          placeHolder={wrongUser ? 'Oho! wrong password' : 'Password'}
+          type="password"
+          value={state.currentUserPassword}
+          wrong={wrongUser ? 'wrong' : ''}
+        />
         <Button onClick={this.handleButtonClick} theme="blue" text="Log In" />
       </>
     );
