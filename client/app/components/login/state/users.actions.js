@@ -13,16 +13,19 @@ const fetchUsersRejected = () => ({
   type: CONSTANTS.FETCH_USERS_REJECTED,
 });
 
-const handleUserNameInput = () => ({
+const handleUserNameInput = (text) => ({
   type: CONSTANTS.CHANGE_INPUT_NAME,
+  payload: text,
 });
 
-const handleEmailInput = () => ({
+const handleEmailInput = (text) => ({
   type: CONSTANTS.CHANGE_INPUT_EMAIL,
+  payload: text,
 });
 
-const handlepasswordInput = () => ({
+const handlepasswordInput = (text) => ({
   type: CONSTANTS.CHANGE_INPUT_PASSWORD,
+  payload: text,
 });
 
 const handleButtonClick = () => ({
