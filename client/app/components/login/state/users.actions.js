@@ -32,6 +32,10 @@ const handleButtonClick = () => ({
   type: CONSTANTS.HANDLE_BUTTON_CLICK,
 });
 
+const userLogInSuccess = () => ({
+  type: CONSTANTS.HANDLE_USER_LOG_IN_SUCCESS,
+});
+
 export default {
   fetchUsersSuccess,
   fetchUsersPending,
@@ -40,4 +44,5 @@ export default {
   handleEmailInput,
   handlepasswordInput,
   handleButtonClick,
+  userLogInSuccess,
 };
