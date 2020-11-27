@@ -20,7 +20,45 @@ class Login extends React.Component {
     this.fetchUsers();
   }
 
+  checkIfUserNameExists() {
+    const { state } = this.props;
+    const { users, currentUserName } = state;
+
+    const userName = users.map((item) => item.username);
+    return userName.includes(currentUserName);
+  }
+
+  checkIfUserEmailExists() {
+    const { state } = this.props;
+    const { users, currentUserEmail } = state;
+
+    const userEmail = users.map((item) => item.email);
+    return userEmail.includes(currentUserEmail);
+  }
+
+  checkIfUserPasswordIsCorrect() {
+    const { state } = this.props;
+    const { users, currentUserPassword } = state;
+
+    const userPassword = users.map((item) => item.password);
+    return userPassword.includes(currentUserPassword);
+  }
+
+  checkIfUserExists() {
+    let isTheRightUser;
+    const theUserExists = this.checkIfUserNameExists() &&
+    this.checkIfUserEmailExists() &&
+    this.checkIfUserPasswordIsCorrect();
+
+    if (theUserExists) {
+      isTheRightUser = true;
+    }
+
+    return isTheRightUser;
+  }
+
   handleButtonClick() {
+    console.log(this.checkIfUserExists());
     // eslint-disable-next-line react/destructuring-assignment
     this.props.actions.handleButtonClick();
   }
