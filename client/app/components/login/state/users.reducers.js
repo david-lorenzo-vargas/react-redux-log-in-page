@@ -67,7 +67,6 @@ const handleButtonClick = (state) => {
   const newState = {
     ...state,
     fetchUserRequest: undefined,
-    users: [],
     currentUserName: '',
     currentUserEmail: '',
     currentUserPassword: '',
