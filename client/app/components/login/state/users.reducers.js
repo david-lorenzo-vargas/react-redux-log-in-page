@@ -3,11 +3,9 @@ import CONSTANTS from './users.constants';
 const defaultState = {
   fetchUserRequest: undefined,
   users: [],
-  currentUser: {
-    userName: '',
-    email: '',
-    password: '',
-  },
+  currentUserName: '',
+  currentUserEmail: '',
+  currentUserPassword: '',
 };
 
 const fetchUsersSuccess = (state, action) => {
@@ -38,10 +36,41 @@ const fetchUsersRejected = (state) => {
   return newState;
 };
 
-const changeInput = (state, action) => {
+const handleUserNameInput = (state, action) => {
   const newState = {
     ...state,
-    currentUser: action.payload,
+    currentUserName: action.payload,
+  };
+
+  return newState;
+};
+
+const handleEmailInput = (state, action) => {
+  const newState = {
+    ...state,
+    currentUserEmail: action.payload,
+  };
+
+  return newState;
+};
+
+const handlepasswordInput = (state, action) => {
+  const newState = {
+    ...state,
+    currentUserPassword: action.payload,
+  };
+
+  return newState;
+};
+
+const handleButtonClick = (state) => {
+  const newState = {
+    ...state,
+    fetchUserRequest: undefined,
+    users: [],
+    currentUserName: '',
+    currentUserEmail: '',
+    currentUserPassword: '',
   };
 
   return newState;
@@ -52,7 +81,10 @@ const loginReducer = (state = defaultState, action) => {
     case CONSTANTS.FETCH_USERS_SUCCESS: return fetchUsersSuccess(state, action);
     case CONSTANTS.FETCH_USERS_PENDING: return fetchUsersPending(state);
     case CONSTANTS.FETCH_USERS_REJECTED: return fetchUsersRejected(state);
-    case CONSTANTS.CHANGE_INPUT: return changeInput(state, action);
+    case CONSTANTS.CHANGE_INPUT_NAME: return handleUserNameInput(state, action);
+    case CONSTANTS.CHANGE_INPUT_EMAIL: return handleEmailInput(state, action);
+    case CONSTANTS.CHANGE_INPUT_PASSWORD: return handlepasswordInput(state, action);
+    case CONSTANTS.HANDLE_BUTTON_CLICK: return handleButtonClick(state);
     default: return state;
   }
 };
