@@ -59,8 +59,21 @@ class Login extends React.Component {
 
   handleButtonClick() {
     console.log(this.checkIfUserExists());
+    let userIslogged;
+
+    if (this.checkIfUserExists()) {
+      userIslogged = this.userLogInSuccess();
+    }
+
     // eslint-disable-next-line react/destructuring-assignment
     this.props.actions.handleButtonClick();
+
+    return userIslogged;
+  }
+
+  userLogInSuccess() {
+    // eslint-disable-next-line react/destructuring-assignment
+    this.props.actions.userLogInSuccess();
   }
 
   handleUserNameInput(value) {
