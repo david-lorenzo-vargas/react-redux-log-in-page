@@ -9,7 +9,7 @@ const apiCall = (fn) => () => new Promise((resolve, reject) => {
 
       resolve(response);
     }, 2000);
-  } catch(e) {
+  } catch (e) {
     reject(e);
   }
 });
@@ -20,5 +20,5 @@ const get = apiCall(() => ({
 }));
 
 export default {
-  get
+  get,
 };
