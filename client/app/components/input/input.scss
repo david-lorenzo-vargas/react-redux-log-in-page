@@ -10,4 +10,8 @@
     padding: 10px 0;
     background-color: transparent;
   }
+
+  &--wrong {
+    border: 2px solid rgb(255, 2, 2);
+  }
 }
