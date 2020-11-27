@@ -1,5 +1,8 @@
 import React from 'react';
+import classnames from 'classnames/bind';
 import styles from './input.scss';
+
+const cx = classnames.bind(styles);
 
 const Input = (props) => {
   const {
@@ -7,6 +10,7 @@ const Input = (props) => {
     type,
     onChange,
     value,
+    wrong,
   } = props;
 
   const handleOnChange = (event) => {
@@ -14,7 +18,10 @@ const Input = (props) => {
   };
 
   return (
-    <div className={styles.input}>
+    <div className={cx('input', {
+      'input--wrong': wrong,
+    })}
+    >
       <input
         onChange={handleOnChange}
         className={styles.input__box}
