@@ -6,6 +6,7 @@ const defaultState = {
   currentUserName: '',
   currentUserEmail: '',
   currentUserPassword: '',
+  userLoggedIn: false,
 };
 
 const fetchUsersSuccess = (state, action) => {
@@ -75,6 +76,15 @@ const handleButtonClick = (state) => {
   return newState;
 };
 
+const userLogInSuccess = (state) => {
+  const newState = {
+    ...state,
+    userLoggedIn: true,
+  };
+
+  return newState;
+};
+
 const loginReducer = (state = defaultState, action) => {
   switch (action.type) {
     case CONSTANTS.FETCH_USERS_SUCCESS: return fetchUsersSuccess(state, action);
@@ -84,6 +94,8 @@ const loginReducer = (state = defaultState, action) => {
     case CONSTANTS.CHANGE_INPUT_EMAIL: return handleEmailInput(state, action);
     case CONSTANTS.CHANGE_INPUT_PASSWORD: return handlepasswordInput(state, action);
     case CONSTANTS.HANDLE_BUTTON_CLICK: return handleButtonClick(state);
+    case CONSTANTS.HANDLE_USER_LOG_IN_SUCCESS: return userLogInSuccess(state);
+
     default: return state;
   }
 };
