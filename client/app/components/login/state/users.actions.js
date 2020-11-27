@@ -13,13 +13,28 @@ const fetchUsersRejected = () => ({
   type: CONSTANTS.FETCH_USERS_REJECTED,
 });
 
-const changeInput = () => ({
-  type: CONSTANTS.CHANGE_INPUT,
+const handleUserNameInput = () => ({
+  type: CONSTANTS.CHANGE_INPUT_NAME,
+});
+
+const handleEmailInput = () => ({
+  type: CONSTANTS.CHANGE_INPUT_EMAIL,
+});
+
+const handlepasswordInput = () => ({
+  type: CONSTANTS.CHANGE_INPUT_PASSWORD,
+});
+
+const handleButtonClick = () => ({
+  type: CONSTANTS.HANDLE_BUTTON_CLICK,
 });
 
 export default {
   fetchUsersSuccess,
   fetchUsersPending,
   fetchUsersRejected,
-  changeInput,
+  handleUserNameInput,
+  handleEmailInput,
+  handlepasswordInput,
+  handleButtonClick,
 };
