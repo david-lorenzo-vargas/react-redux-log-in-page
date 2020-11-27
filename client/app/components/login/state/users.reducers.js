@@ -7,6 +7,7 @@ const defaultState = {
   currentUserEmail: '',
   currentUserPassword: '',
   userLoggedIn: false,
+  userTriedToLogIn: false,
 };
 
 const fetchUsersSuccess = (state, action) => {
@@ -71,6 +72,7 @@ const handleButtonClick = (state) => {
     currentUserName: '',
     currentUserEmail: '',
     currentUserPassword: '',
+    userTriedToLogIn: true,
   };
 
   return newState;
