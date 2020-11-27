@@ -16,23 +16,28 @@ class Login extends React.Component {
     this.handlepasswordInput = this.handlepasswordInput.bind(this);
   }
 
-  handleButtonClick() {
+  componentDidMount() {
     this.fetchUsers();
+  }
+
+  handleButtonClick() {
+    // eslint-disable-next-line react/destructuring-assignment
+    this.props.actions.handleButtonClick();
   }
 
   handleUserNameInput(value) {
     // eslint-disable-next-line react/destructuring-assignment
-    this.props.actions.changeInput(value);
+    this.props.actions.handleUserNameInput(value);
   }
 
   handleEmailInput(value) {
     // eslint-disable-next-line react/destructuring-assignment
-    this.props.actions.changeInput(value);
+    this.props.actions.handleEmailInput(value);
   }
 
   handlepasswordInput(value) {
     // eslint-disable-next-line react/destructuring-assignment
-    this.props.actions.changeInput(value);
+    this.props.actions.handlepasswordInput(value);
   }
 
   fetchUsersRejected() {}
