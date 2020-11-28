@@ -13,9 +13,18 @@ const Banner = () => (
       type="uppercase"
     />
     <Text
-      text="Here for you"
+      text="- Here for you -"
       theme="blue"
       size="big"
+    />
+    <Text
+      // text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      text="Register"
+      size="medium"
+      cursive="italic"
+      link="link"
+      theme="blue"
+      margin="margin"
     />
     <Text
       // text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
@@ -23,6 +32,7 @@ const Banner = () => (
       size="extra-small"
       cursive="italic"
       link="link"
+      underLine="underline"
     />
   </>
 );
