@@ -36,4 +36,13 @@
   &--cursive {
     font-style: italic;
   }
+
+  &--link {
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+      color: rgb(26, 80, 155);
+    }
+  }
 }
