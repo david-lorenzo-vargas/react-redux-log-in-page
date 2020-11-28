@@ -1,8 +1,10 @@
 import React from 'react';
 import Text from '../text';
+import Logo from '../logo';
 
 const Banner = () => (
   <>
+    <Logo size="small" />
     <Text
       text="blue vera"
       bold="bold"
@@ -16,9 +18,11 @@ const Banner = () => (
       size="big"
     />
     <Text
-      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      // text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      text="Terms and Conditions"
       size="extra-small"
       cursive="italic"
+      link="link"
     />
   </>
 );
