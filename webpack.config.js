@@ -47,14 +47,15 @@ module.exports = ({ NODE_ENV }) => ({
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: 'assets/images',
-            },
-          },
-        ],
+        loader: 'url-loader',
+        // use: [
+        //   {
+        //     loader: 'file-loader',
+        //     options: {
+        //       outputPath: 'assets/images',
+        //     },
+        //   },
+        // ],
       },
     ],
   },
