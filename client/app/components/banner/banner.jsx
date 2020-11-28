@@ -13,7 +13,7 @@ const Banner = () => (
       type="uppercase"
     />
     <Text
-      text="Log in"
+      text="Here for you"
       theme="blue"
       size="big"
     />
