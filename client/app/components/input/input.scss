@@ -1,10 +1,11 @@
 .input {
-  width: 200px;
+  width: 300px;
   border-radius: 25px;
   background-color: rgb(255, 255, 255);
   padding: 10px 30px;
   margin: 10px;
-
+  border: 0;
+  
   &__box {
     width: 100%;
     padding: 10px 0;
@@ -13,5 +14,9 @@
 
   &--wrong {
     border: 2px solid rgb(255, 2, 2);
+  }
+
+  &--outline-none:focus {
+    outline: none;
   }
 }
