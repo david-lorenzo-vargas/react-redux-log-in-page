@@ -5,6 +5,7 @@ import actions from './state/users.actions';
 import Input from '../input';
 import Button from '../button';
 import usersApi from './state/api';
+import Text from '../text';
 
 class Login extends React.Component {
   constructor(props) {
@@ -140,7 +141,19 @@ class Login extends React.Component {
           value={state.currentUserPassword}
           wrong={wrongUser ? 'wrong' : ''}
         />
-        <Button onClick={this.handleButtonClick} theme="blue" text="Log In" />
+        <Button
+          onClick={this.handleButtonClick}
+          theme="blue"
+          text="Log In"
+        />
+        <Text
+          text="Forgotten password?"
+          link="link"
+          theme="white"
+          size="medium"
+          center="center"
+          margin="margin"
+        />
       </>
     );
   }
