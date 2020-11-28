@@ -11,6 +11,7 @@ const Input = (props) => {
     onChange,
     value,
     wrong,
+    outLine,
   } = props;
 
   const handleOnChange = (event) => {
@@ -20,6 +21,7 @@ const Input = (props) => {
   return (
     <div className={cx('input', {
       'input--wrong': wrong,
+      [`input--outline-${outLine}`]: outLine,
     })}
     >
       <input
