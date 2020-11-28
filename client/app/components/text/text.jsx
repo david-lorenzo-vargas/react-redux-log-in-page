@@ -13,6 +13,9 @@ const Text = (props) => {
     type,
     cursive,
     link,
+    underLine,
+    center,
+    margin,
   } = props;
 
   return (
@@ -23,6 +26,9 @@ const Text = (props) => {
       [`text--type-${type}`]: type,
       'text--cursive': cursive,
       'text--link': link,
+      'text--underline': underLine,
+      'text--center': center,
+      'text--margin': margin,
     })}
     >
       <span>{text}</span>
