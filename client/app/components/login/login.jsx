@@ -124,6 +124,7 @@ class Login extends React.Component {
           type="text"
           value={state.currentUserName}
           wrong={wrongUser ? 'wrong' : ''}
+          outLine="none"
         />
         <Input
           onChange={this.handleEmailInput}
