@@ -38,11 +38,23 @@
   }
 
   &--link {
-    text-decoration: underline;
     cursor: pointer;
 
     &:hover {
-      color: rgb(26, 80, 155);
+      // color: rgb(26, 80, 155);
+      opacity: .5;
     }
+  }
+
+  &--underline {
+    text-decoration: underline;
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--margin {
+    margin: 10px 0;
   }
 }
