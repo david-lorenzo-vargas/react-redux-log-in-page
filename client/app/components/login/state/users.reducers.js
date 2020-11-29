@@ -4,11 +4,15 @@ const defaultState = {
   fetchUserRequest: undefined,
   users: [],
   currentUserName: '',
+  registerUserName: '',
   currentUserEmail: '',
+  registerUserEmail: '',
   currentUserPassword: '',
+  registerUserPassword: '',
   userLoggedIn: false,
   userTriedToLogIn: false,
   userNameLogged: '',
+  registerStarted: false,
 };
 
 const fetchUsersSuccess = (state, action) => {
@@ -48,10 +52,28 @@ const handleUserNameInput = (state, action) => {
   return newState;
 };
 
+const handleRegisterUserNameInput = (state, action) => {
+  const newState = {
+    ...state,
+    registerUserName: action.payload,
+  };
+
+  return newState;
+};
+
 const handleEmailInput = (state, action) => {
   const newState = {
     ...state,
     currentUserEmail: action.payload,
+  };
+
+  return newState;
+};
+
+const handleRegisterEmailInput = (state, action) => {
+  const newState = {
+    ...state,
+    registerUserEmail: action.payload,
   };
 
   return newState;
@@ -66,6 +88,15 @@ const handlepasswordInput = (state, action) => {
   return newState;
 };
 
+const handleRegisterpasswordInput = (state, action) => {
+  const newState = {
+    ...state,
+    registerUserPassword: action.payload,
+  };
+
+  return newState;
+};
+
 const handleButtonClick = (state) => {
   const newState = {
     ...state,
@@ -75,6 +106,30 @@ const handleButtonClick = (state) => {
     currentUserPassword: '',
     userTriedToLogIn: true,
     userNameLogged: state.currentUserName,
+  };
+
+  return newState;
+};
+
+const handleStartRegisterButtonClick = (state) => {
+  const newState = {
+    ...state,
+    registerStarted: true,
+  };
+
+  return newState;
+};
+
+const handleRegisterButtonClick = (state) => {
+  const newUser = {
+    username: state.registerUserName,
+    email: state.registerUserEmail,
+    password: state.registerUserPassword,
+  };
+
+  const newState = {
+    ...state,
+    users: [...state.users, newUser],
   };
 
   return newState;
@@ -96,9 +151,20 @@ const loginReducer = (state = defaultState, action) => {
     case CONSTANTS.FETCH_USERS_REJECTED: return fetchUsersRejected(state);
     case CONSTANTS.CHANGE_INPUT_NAME: return handleUserNameInput(state, action);
     case CONSTANTS.CHANGE_INPUT_EMAIL: return handleEmailInput(state, action);
-    case CONSTANTS.CHANGE_INPUT_PASSWORD: return handlepasswordInput(state, action);
+    case CONSTANTS.CHANGE_INPUT_PASSWORD:
+      return handlepasswordInput(state, action);
     case CONSTANTS.HANDLE_BUTTON_CLICK: return handleButtonClick(state);
     case CONSTANTS.HANDLE_USER_LOG_IN_SUCCESS: return userLogInSuccess(state);
+    case CONSTANTS.HANLDE_REGISTER_INPUT_NAME:
+      return handleRegisterUserNameInput(state, action);
+    case CONSTANTS.HANLDE_REGISTER_EMAIL:
+      return handleRegisterEmailInput(state, action);
+    case CONSTANTS.HANLDE_REGISTER_PASSWORD:
+      return handleRegisterpasswordInput(state, action);
+    case CONSTANTS.HANLDE_REGISTER_STARTED_BUTTON_CLICK:
+      return handleStartRegisterButtonClick(state);
+    case CONSTANTS.HANLDE_REGISTER_FINISHED_BUTTON_CLICK:
+      return handleRegisterButtonClick(state);
 
     default: return state;
   }
