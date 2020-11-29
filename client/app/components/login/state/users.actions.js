@@ -38,7 +38,7 @@ const handlepasswordInput = (text) => ({
   payload: text,
 });
 
-const handleRegisterpasswordInput = (text) => ({
+const handleRegisterPasswordInput = (text) => ({
   type: CONSTANTS.HANLDE_REGISTER_PASSWORD,
   payload: text,
 });
@@ -70,7 +70,7 @@ export default {
   userLogInSuccess,
   handleRegisterUserNameInput,
   handleRegisterEmailInput,
-  handleRegisterpasswordInput,
+  handleRegisterPasswordInput,
   handleStartRegisterButtonClick,
   handleRegisterButtonClick,
 };
