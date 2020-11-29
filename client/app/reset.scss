@@ -14,7 +14,7 @@
   border-radius: 25px;
 
   &__input {
-    clip-path: polygon(23% 0, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
     background-color: rgb(26, 80, 155);
     border-radius: 0 25px 25px 0;
     width: 70%;
@@ -46,4 +46,17 @@
     justify-content: center;
     align-items: center;
   }
+}
+
+.form {
+  background-color: rgb(26, 80, 155);
+  margin: 100px auto;
+  border-radius: 25px;
+  width: 60%;
+  height: 400px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
