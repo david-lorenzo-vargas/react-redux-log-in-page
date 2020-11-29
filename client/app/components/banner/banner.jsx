@@ -34,7 +34,6 @@ class Banner extends React.Component {
           size="big"
         />
         <Text
-          // text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           text="Register"
           size="medium"
           cursive="italic"
@@ -44,7 +43,6 @@ class Banner extends React.Component {
           onClick={this.handleStartRegisterButtonClick}
         />
         <Text
-          // text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
           text="Terms and Conditions"
           size="extra-small"
           cursive="italic"
