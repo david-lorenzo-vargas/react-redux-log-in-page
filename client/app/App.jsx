@@ -10,10 +10,14 @@ import styles from './reset.scss';
 
 const App = (props) => {
   const { state } = props;
-  const { userLoggedIn, registerStarted } = state;
+  const { userLoggedIn, registerStatus } = state;
 
   return (
-    registerStarted ? <RegisterForm /> :
+    registerStatus === 'started' ? (
+      <div className={styles.form}>
+        <RegisterForm />
+      </div>
+    ) :
       (
         <div className={styles.app}>
           <Row center>
