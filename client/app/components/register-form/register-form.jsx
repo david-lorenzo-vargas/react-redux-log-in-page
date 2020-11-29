@@ -4,7 +4,6 @@ import { bindActionCreators } from '@reduxjs/toolkit';
 import actions from '../login/state';
 import Input from '../input';
 import Button from '../button';
-import styles from './register-form.scss';
 
 class RegisterForm extends React.Component {
   constructor(props) {
@@ -16,38 +15,57 @@ class RegisterForm extends React.Component {
     this.handleRegisterButtonClick = this.handleRegisterButtonClick.bind(this);
   }
 
-  handleRegisterUserNameInput() {}
+  handleRegisterUserNameInput(value) {
+    // eslint-disable-next-line react/destructuring-assignment
+    this.props.actions.handleRegisterUserNameInput(value);
+  }
 
-  handleRegisterEmailInput() {}
+  handleRegisterEmailInput(value) {
+    // eslint-disable-next-line react/destructuring-assignment
+    this.props.actions.handleRegisterEmailInput(value);
+  }
 
-  handleRegisterpasswordInput() {}
+  handleRegisterpasswordInput(value) {
+    // eslint-disable-next-line react/destructuring-assignment
+    this.props.actions.handleRegisterPasswordInput(value);
+  }
 
-  handleRegisterButtonClick() {}
+  handleRegisterButtonClick() {
+    // eslint-disable-next-line react/destructuring-assignment
+    this.props.actions.handleRegisterButtonClick();
+  }
 
   render() {
+    const { state } = this.props;
+    const {
+      registerUserName,
+      registerUserEmail,
+      registerUserPassword,
+    } = state;
+
     return (
       <>
         <Input
           onChange={this.handleRegisterUserNameInput}
           placeHolder="user name"
           type="text"
-          value={state.currentUserName}
-          wrong={wrongUser ? 'wrong' : ''}
+          value={registerUserName}
+          // wrong={wrongUser ? 'wrong' : ''}
           outLine="none"
         />
         <Input
           onChange={this.handleRegisterEmailInput}
           placeHolder="email"
           type="text"
-          value={state.currentUserEmail}
-          wrong={wrongUser ? 'wrong' : ''}
+          value={registerUserEmail}
+          // wrong={wrongUser ? 'wrong' : ''}
         />
         <Input
           onChange={this.handleRegisterpasswordInput}
           placeHolder="password"
           type="password"
-          value={state.currentUserPassword}
-          wrong={wrongUser ? 'wrong' : ''}
+          value={registerUserPassword}
+          // wrong={wrongUser ? 'wrong' : ''}
         />
         <Button
           onClick={this.handleRegisterButtonClick}
