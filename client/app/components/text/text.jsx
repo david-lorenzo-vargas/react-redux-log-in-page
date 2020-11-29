@@ -16,7 +16,12 @@ const Text = (props) => {
     underLine,
     center,
     margin,
+    onClick,
   } = props;
+
+  const handleStartRegisterButtonClick = () => {
+    onClick();
+  };
 
   return (
     <div className={cx('text', {
@@ -31,7 +36,7 @@ const Text = (props) => {
       'text--margin': margin,
     })}
     >
-      <span>{text}</span>
+      <span onClick={handleStartRegisterButtonClick}>{text}</span>
     </div>
   );
 };
