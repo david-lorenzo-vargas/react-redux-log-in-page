@@ -12,7 +12,7 @@ const defaultState = {
   userLoggedIn: false,
   userTriedToLogIn: false,
   userNameLogged: '',
-  registerStarted: false,
+  registerStatus: '',
 };
 
 const fetchUsersSuccess = (state, action) => {
@@ -88,7 +88,7 @@ const handlepasswordInput = (state, action) => {
   return newState;
 };
 
-const handleRegisterpasswordInput = (state, action) => {
+const handleRegisterPasswordInput = (state, action) => {
   const newState = {
     ...state,
     registerUserPassword: action.payload,
@@ -114,7 +114,7 @@ const handleButtonClick = (state) => {
 const handleStartRegisterButtonClick = (state) => {
   const newState = {
     ...state,
-    registerStarted: true,
+    registerStatus: 'started',
   };
 
   return newState;
@@ -130,6 +130,10 @@ const handleRegisterButtonClick = (state) => {
   const newState = {
     ...state,
     users: [...state.users, newUser],
+    registerUserName: '',
+    registerUserEmail: '',
+    registerUserPassword: '',
+    registerStatus: 'finished',
   };
 
   return newState;
@@ -160,7 +164,7 @@ const loginReducer = (state = defaultState, action) => {
     case CONSTANTS.HANLDE_REGISTER_EMAIL:
       return handleRegisterEmailInput(state, action);
     case CONSTANTS.HANLDE_REGISTER_PASSWORD:
-      return handleRegisterpasswordInput(state, action);
+      return handleRegisterPasswordInput(state, action);
     case CONSTANTS.HANLDE_REGISTER_STARTED_BUTTON_CLICK:
       return handleStartRegisterButtonClick(state);
     case CONSTANTS.HANLDE_REGISTER_FINISHED_BUTTON_CLICK:
