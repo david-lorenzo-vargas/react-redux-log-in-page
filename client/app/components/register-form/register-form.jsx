@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from '@reduxjs/toolkit';
-import actions from '../login/state';
+import actions from '../login/state/users.actions';
 import Input from '../input';
 import Button from '../button';
 
@@ -11,7 +11,7 @@ class RegisterForm extends React.Component {
 
     this.handleRegisterUserNameInput = this.handleRegisterUserNameInput.bind(this);
     this.handleRegisterEmailInput = this.handleRegisterEmailInput.bind(this);
-    this.handleRegisterpasswordInput = this.handleRegisterpasswordInput.bind(this);
+    this.handleRegisterPasswordInput = this.handleRegisterPasswordInput.bind(this);
     this.handleRegisterButtonClick = this.handleRegisterButtonClick.bind(this);
   }
 
@@ -25,7 +25,7 @@ class RegisterForm extends React.Component {
     this.props.actions.handleRegisterEmailInput(value);
   }
 
-  handleRegisterpasswordInput(value) {
+  handleRegisterPasswordInput(value) {
     // eslint-disable-next-line react/destructuring-assignment
     this.props.actions.handleRegisterPasswordInput(value);
   }
@@ -61,7 +61,7 @@ class RegisterForm extends React.Component {
           // wrong={wrongUser ? 'wrong' : ''}
         />
         <Input
-          onChange={this.handleRegisterpasswordInput}
+          onChange={this.handleRegisterPasswordInput}
           placeHolder="password"
           type="password"
           value={registerUserPassword}
