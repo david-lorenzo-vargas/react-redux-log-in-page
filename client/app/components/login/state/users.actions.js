@@ -18,8 +18,18 @@ const handleUserNameInput = (text) => ({
   payload: text,
 });
 
+const handleRegisterUserNameInput = (text) => ({
+  type: CONSTANTS.HANLDE_REGISTER_INPUT_NAME,
+  payload: text,
+});
+
 const handleEmailInput = (text) => ({
   type: CONSTANTS.CHANGE_INPUT_EMAIL,
+  payload: text,
+});
+
+const handleRegisterEmailInput = (text) => ({
+  type: CONSTANTS.HANLDE_REGISTER_EMAIL,
   payload: text,
 });
 
@@ -28,8 +38,21 @@ const handlepasswordInput = (text) => ({
   payload: text,
 });
 
+const handleRegisterpasswordInput = (text) => ({
+  type: CONSTANTS.HANLDE_REGISTER_PASSWORD,
+  payload: text,
+});
+
 const handleButtonClick = () => ({
   type: CONSTANTS.HANDLE_BUTTON_CLICK,
+});
+
+const handleStartRegisterButtonClick = () => ({
+  type: CONSTANTS.HANLDE_REGISTER_STARTED_BUTTON_CLICK,
+});
+
+const handleRegisterButtonClick = () => ({
+  type: CONSTANTS.HANLDE_REGISTER_FINISHED_BUTTON_CLICK,
 });
 
 const userLogInSuccess = () => ({
@@ -45,4 +68,9 @@ export default {
   handlepasswordInput,
   handleButtonClick,
   userLogInSuccess,
+  handleRegisterUserNameInput,
+  handleRegisterEmailInput,
+  handleRegisterpasswordInput,
+  handleStartRegisterButtonClick,
+  handleRegisterButtonClick,
 };
