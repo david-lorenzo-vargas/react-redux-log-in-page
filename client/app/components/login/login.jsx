@@ -18,7 +18,12 @@ class Login extends React.Component {
   }
 
   componentDidMount() {
-    this.fetchUsers();
+    const { state } = this.props;
+    const { registerStatus } = state;
+
+    if (!registerStatus) {
+      this.fetchUsers();
+    }
   }
 
   checkIfUserNameExists() {
