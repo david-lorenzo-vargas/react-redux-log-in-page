@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from '@reduxjs/toolkit';
-import actions from '../login/state';
+import actions from '../login/state/users.actions';
 import Text from '../text';
 import Logo from '../logo';
 
@@ -66,3 +66,4 @@ const mapDispatchToProps = dispatch => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Banner);
+// export default Banner;
