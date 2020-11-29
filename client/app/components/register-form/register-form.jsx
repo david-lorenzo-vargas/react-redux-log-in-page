@@ -1,4 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from '@reduxjs/toolkit';
+import actions from '../login/state';
 import Input from '../input';
 import Button from '../button';
 import styles from './register-form.scss';
@@ -56,4 +59,15 @@ class RegisterForm extends React.Component {
   }
 }
 
-export default RegisterForm;
+const mapStateToProps = (store) => ({
+  state: {
+    ...store.sendButton.users,
+    ...store.input,
+  },
+});
+
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(actions, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(RegisterForm);
