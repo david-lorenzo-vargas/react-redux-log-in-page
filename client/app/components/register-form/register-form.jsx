@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from '@reduxjs/toolkit';
 import actions from '../login/state/users.actions';
+import styles from './register-form.scss';
 import Input from '../input';
 import Button from '../button';
 
@@ -41,38 +42,40 @@ class RegisterForm extends React.Component {
       registerUserName,
       registerUserEmail,
       registerUserPassword,
+      registerStatus,
     } = state;
 
     return (
-      <>
-        <Input
-          onChange={this.handleRegisterUserNameInput}
-          placeHolder="user name"
-          type="text"
-          value={registerUserName}
-          // wrong={wrongUser ? 'wrong' : ''}
-          outLine="none"
-        />
-        <Input
-          onChange={this.handleRegisterEmailInput}
-          placeHolder="email"
-          type="text"
-          value={registerUserEmail}
-          // wrong={wrongUser ? 'wrong' : ''}
-        />
-        <Input
-          onChange={this.handleRegisterPasswordInput}
-          placeHolder="password"
-          type="password"
-          value={registerUserPassword}
-          // wrong={wrongUser ? 'wrong' : ''}
-        />
-        <Button
-          onClick={this.handleRegisterButtonClick}
-          theme="blue"
-          text="Register"
-        />
-      </>
+      registerStatus === 'started' ?
+        (
+          <div className={styles.form}>
+            <Input
+              onChange={this.handleRegisterUserNameInput}
+              placeHolder="user name"
+              type="text"
+              value={registerUserName}
+              outLine="none"
+            />
+            <Input
+              onChange={this.handleRegisterEmailInput}
+              placeHolder="email"
+              type="text"
+              value={registerUserEmail}
+            />
+            <Input
+              onChange={this.handleRegisterPasswordInput}
+              placeHolder="password"
+              type="password"
+              value={registerUserPassword}
+            />
+            <Button
+              onClick={this.handleRegisterButtonClick}
+              theme="blue"
+              text="Register"
+            />
+          </div>
+        ) :
+        ''
     );
   }
 }
