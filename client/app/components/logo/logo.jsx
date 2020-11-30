@@ -6,7 +6,7 @@ import logo from './aloe-logo.png';
 const cx = classnames.bind(styles);
 
 const Logo = (props) => {
-  const { size } = props;
+  const { size, position } = props;
 
   return (
     <>
@@ -14,6 +14,7 @@ const Logo = (props) => {
         <img
           className={cx('logo', {
             [`logo--size-${size}`]: size,
+            [`logo--position-${position}`]: position,
           })}
           src={logo}
           alt="logo"
