@@ -5,12 +5,12 @@
   height: 50px;
   border-radius: 50%;
   background: linear-gradient(0deg, rgb(179, 205, 224), rgb(100, 151, 177), rgb(4, 57, 108));
-  animation: spinner 500ms infinite;
+  animation: spinner 800ms infinite;
 
   &__item {
     position: absolute;
-    width: 46px;
-    height: 46px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
     background: rgb(231, 231, 231);
     top: 50%;
