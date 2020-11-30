@@ -20,9 +20,9 @@ class Banner extends React.Component {
 
   render() {
     const { state } = this.props;
-    const { fetchUserRequest } = state;
+    const { fetchUserRequest, userTriedToLogIn } = state;
     return (
-      fetchUserRequest === 'success' ?
+      fetchUserRequest === 'success' || userTriedToLogIn ?
         (
           <div className={styles.banner}>
             <Logo size="small" />
