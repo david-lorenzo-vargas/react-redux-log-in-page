@@ -6,15 +6,24 @@ import styles from './loading-page.scss';
 
 const LoadingPage = () => (
   <div className={styles.loading}>
-    <Logo size="small" />
-    <Text
-      text="blue vera"
-      bold="bold"
-      theme="blue"
-      size="extra-big"
-      type="uppercase"
-    />
-    <Spinner />
+    <div className={styles.loading__item}>
+      <div className={styles.loading__logo}>
+        <Logo size="small" />
+      </div>
+      <div className={styles.loading__text}>
+        <Text
+          text="blue vera"
+          bold="bold"
+          theme="blue"
+          size="extra-big"
+          type="uppercase"
+        />
+      </div>
+      <div className={styles.loading__spinner}>
+        <Spinner />
+      </div>
+    </div>
+
   </div>
 );
 
