@@ -2,10 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from '@reduxjs/toolkit';
 import actions from './state/users.actions';
+import styles from './login.scss';
 import Input from '../input';
 import Button from '../button';
 import usersApi from './state/api';
 import Text from '../text';
+import LoadingPage from '../loading-page';
 
 class Login extends React.Component {
   constructor(props) {
@@ -119,47 +121,50 @@ class Login extends React.Component {
 
   render() {
     const { state } = this.props;
-    const { userTriedToLogIn } = state;
+    const { userTriedToLogIn, fetchUserRequest, userLoggedIn } = state;
     const wrongUser = !this.checkIfUserExists() && userTriedToLogIn;
 
     return (
-      <>
-        <Input
-          onChange={this.handleUserNameInput}
-          placeHolder={wrongUser ? 'Wrong user name!' : 'User name'}
-          type="text"
-          value={state.currentUserName}
-          wrong={wrongUser ? 'wrong' : ''}
-          outLine="none"
-        />
-        <Input
-          onChange={this.handleEmailInput}
-          placeHolder={wrongUser ? 'Email forgotten?' : 'Email'}
-          type="text"
-          value={state.currentUserEmail}
-          wrong={wrongUser ? 'wrong' : ''}
-        />
-        <Input
-          onChange={this.handlepasswordInput}
-          placeHolder={wrongUser ? 'Oho! wrong password' : 'Password'}
-          type="password"
-          value={state.currentUserPassword}
-          wrong={wrongUser ? 'wrong' : ''}
-        />
-        <Button
-          onClick={this.handleButtonClick}
-          theme="blue"
-          text="Log In"
-        />
-        <Text
-          text="Forgotten password?"
-          link="link"
-          theme="white"
-          size="medium"
-          center="center"
-          margin="margin"
-        />
-      </>
+      fetchUserRequest === 'pending' && !userLoggedIn ? <LoadingPage /> :
+        (
+          <div className={styles.login}>
+            <Input
+              onChange={this.handleUserNameInput}
+              placeHolder={wrongUser ? 'Wrong user name!' : 'User name'}
+              type="text"
+              value={state.currentUserName}
+              wrong={wrongUser ? 'wrong' : ''}
+              outLine="none"
+            />
+            <Input
+              onChange={this.handleEmailInput}
+              placeHolder={wrongUser ? 'Email forgotten?' : 'Email'}
+              type="text"
+              value={state.currentUserEmail}
+              wrong={wrongUser ? 'wrong' : ''}
+            />
+            <Input
+              onChange={this.handlepasswordInput}
+              placeHolder={wrongUser ? 'Oho! wrong password' : 'Password'}
+              type="password"
+              value={state.currentUserPassword}
+              wrong={wrongUser ? 'wrong' : ''}
+            />
+            <Button
+              onClick={this.handleButtonClick}
+              theme="blue"
+              text="Log In"
+            />
+            <Text
+              text="Forgotten password?"
+              link="link"
+              theme="white"
+              size="medium"
+              center="center"
+              margin="margin"
+            />
+          </div>
+        )
     );
   }
 }
