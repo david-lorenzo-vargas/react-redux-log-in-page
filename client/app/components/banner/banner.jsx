@@ -30,13 +30,14 @@ class Banner extends React.Component {
               text="blue vera"
               bold="bold"
               theme="blue"
-              size="extra-big"
+              size="big"
               type="uppercase"
+              center="center"
             />
             <Text
               text="- Here for you -"
               theme="blue"
-              size="big"
+              size="medium"
             />
             <Text
               text="Register"
