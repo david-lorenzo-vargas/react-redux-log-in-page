@@ -20,6 +20,7 @@ const LoadingPage = () => (
           theme="blue"
           size="extra-big"
           type="uppercase"
+          center="center"
         />
       </div>
       <div className={styles.loading__spinner}>
