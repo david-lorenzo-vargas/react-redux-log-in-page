@@ -8,7 +8,10 @@ const LoadingPage = () => (
   <div className={styles.loading}>
     <div className={styles.loading__item}>
       <div className={styles.loading__logo}>
-        <Logo size="small" />
+        <Logo
+          size="medium"
+          position="center"
+        />
       </div>
       <div className={styles.loading__text}>
         <Text
