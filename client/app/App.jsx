@@ -1,51 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Row, Column } from './components/grid';
-import Login from './components/login';
-import Banner from './components/banner';
-import RegisterForm from './components/register-form';
+// import { Row, Column } from './components/grid';
 import WelcomePage from './components/welcome-page';
+import RegisterForm from './components/register-form';
+import LoggedInPage from './components/logged-in-page';
 
 import styles from './reset.scss';
 
-const App = (props) => {
-  const { state } = props;
-  const { userLoggedIn, registerStatus } = state;
-
-  return (
-    registerStatus === 'started' ? (
-      <div className={styles.form}>
-        <RegisterForm />
-      </div>
-    ) :
-      (
-        <div className={styles.app}>
-          <Row center>
-            <div className={styles.app__info}>
-              <Column>
-                <Banner />
-              </Column>
-            </div>
-            {!userLoggedIn ?
-              (
-                <div className={styles.app__input}>
-                  <Column>
-                    <Login />
-                  </Column>
-                </div>
-              ) :
-              (
-                <div className={styles.app__welcome}>
-                  <Column>
-                    <WelcomePage />
-                  </Column>
-                </div>
-              )}
-          </Row>
-        </div>
-      )
-  );
-};
+const App = () => (
+  <div className={styles.app}>
+    <div className={styles.app__item}>
+      <WelcomePage />
+      <RegisterForm />
+      <LoggedInPage />
+    </div>
+  </div>
+);
 
 const mapStateToProps = (store) => ({
   state: {
