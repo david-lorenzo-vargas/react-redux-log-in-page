@@ -42,7 +42,7 @@ class Banner extends React.Component {
             <Text
               text="Register"
               size="medium"
-              cursive="italic"
+              bold="bold"
               link="link"
               theme="blue"
               margin="margin"
