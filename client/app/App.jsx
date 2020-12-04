@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import WelcomePage from './components/welcome-page';
 import RegisterForm from './components/register-form';
 import LoggedInPage from './components/logged-in-page';
+import ForgottenPassword from './components/forgotten-password';
 
 import styles from './reset.scss';
 
@@ -13,6 +14,7 @@ const App = () => (
       <WelcomePage />
       <RegisterForm />
       <LoggedInPage />
+      <ForgottenPassword />
     </div>
   </div>
 );
