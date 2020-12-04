@@ -17,6 +17,7 @@ class Login extends React.Component {
     this.handleUserNameInput = this.handleUserNameInput.bind(this);
     this.handleEmailInput = this.handleEmailInput.bind(this);
     this.handlepasswordInput = this.handlepasswordInput.bind(this);
+    this.forgottenPasswordButtonClick = this.forgottenPasswordButtonClick.bind(this);
   }
 
   componentDidMount() {
@@ -76,6 +77,11 @@ class Login extends React.Component {
     this.props.actions.handleButtonClick();
 
     return userIslogged;
+  }
+
+  forgottenPasswordButtonClick() {
+    // eslint-disable-next-line react/destructuring-assignment
+    this.props.actions.forgottenPasswordButtonClick();
   }
 
   userLogInSuccess() {
@@ -162,6 +168,7 @@ class Login extends React.Component {
               size="medium"
               center="center"
               margin="margin"
+              onClick={this.forgottenPasswordButtonClick}
             />
           </div>
         )
