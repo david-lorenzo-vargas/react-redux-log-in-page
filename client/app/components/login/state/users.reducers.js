@@ -13,6 +13,8 @@ const defaultState = {
   userTriedToLogIn: false,
   userNameLogged: '',
   registerStatus: '',
+  forgottenEmail: '',
+  forgottenPasswordSubmited: false,
 };
 
 const fetchUsersSuccess = (state, action) => {
@@ -97,6 +99,15 @@ const handleRegisterPasswordInput = (state, action) => {
   return newState;
 };
 
+const handleForgottenPasswordlInput = (state, action) => {
+  const newState = {
+    ...state,
+    forgottenEmail: action.payload,
+  };
+
+  return newState;
+};
+
 const handleButtonClick = (state) => {
   const newState = {
     ...state,
@@ -106,6 +117,15 @@ const handleButtonClick = (state) => {
     currentUserPassword: '',
     userTriedToLogIn: true,
     userNameLogged: state.currentUserName,
+  };
+
+  return newState;
+};
+
+const handleSubmitForgottenPasswordButtonClick = (state) => {
+  const newState = {
+    ...state,
+    forgottenPasswordSubmited: true,
   };
 
   return newState;
@@ -169,6 +189,10 @@ const loginReducer = (state = defaultState, action) => {
       return handleStartRegisterButtonClick(state);
     case CONSTANTS.HANLDE_REGISTER_FINISHED_BUTTON_CLICK:
       return handleRegisterButtonClick(state);
+    case CONSTANTS.HANLDE_FORGOTTEN_PASSWORD_INPUT:
+      return handleForgottenPasswordlInput(state, action);
+    case CONSTANTS.HANLDE_FORGOTTEN_PASSWORD_BUTTON:
+      return handleSubmitForgottenPasswordButtonClick(state);
 
     default: return state;
   }
