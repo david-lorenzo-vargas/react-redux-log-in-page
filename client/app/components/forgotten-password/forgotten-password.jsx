@@ -8,7 +8,7 @@ import Button from '../button';
 import { Row, Column } from '../grid';
 
 const ForgottenPassword = (props) => {
-  const { forgottenEmail } = props;
+  const { forgottenEmail, forgottenPassword } = props;
 
   const handleForgottenPasswordlInput = (value) => {
     props.actions.handleForgottenPasswordlInput(value);
@@ -19,25 +19,29 @@ const ForgottenPassword = (props) => {
   };
 
   return (
-    <div className={styles.forgotten}>
-      <Row>
-        <Column>
-          <Input
-            onChange={handleForgottenPasswordlInput}
-            placeHolder="email"
-            type="text"
-            value={forgottenEmail}
-          />
-        </Column>
-        <Column>
-          <Button
-            onClick={handleSubmitForgottenPasswordButtonClick}
-            theme="blue"
-            text="Submit"
-          />
-        </Column>
-      </Row>
-    </div>
+    forgottenPassword ?
+      (
+        <div className={styles.forgotten}>
+          <Row>
+            <Column>
+              <Input
+                onChange={handleForgottenPasswordlInput}
+                placeHolder="email"
+                type="text"
+                value={forgottenEmail}
+              />
+            </Column>
+            <Column>
+              <Button
+                onClick={handleSubmitForgottenPasswordButtonClick}
+                theme="blue"
+                text="Submit"
+              />
+            </Column>
+          </Row>
+        </div>
+      ) :
+      null
   );
 };
 
