@@ -55,8 +55,17 @@ const handleRegisterButtonClick = () => ({
   type: CONSTANTS.HANLDE_REGISTER_FINISHED_BUTTON_CLICK,
 });
 
+const handleSubmitForgottenPasswordButtonClick = () => ({
+  type: CONSTANTS.HANLDE_FORGOTTEN_PASSWORD_BUTTON,
+});
+
 const userLogInSuccess = () => ({
   type: CONSTANTS.HANDLE_USER_LOG_IN_SUCCESS,
+});
+
+const handleForgottenPasswordlInput = (text) => ({
+  type: CONSTANTS.HANLDE_FORGOTTEN_PASSWORD_INPUT,
+  payload: text,
 });
 
 export default {
@@ -73,4 +82,6 @@ export default {
   handleRegisterPasswordInput,
   handleStartRegisterButtonClick,
   handleRegisterButtonClick,
+  handleForgottenPasswordlInput,
+  handleSubmitForgottenPasswordButtonClick,
 };
