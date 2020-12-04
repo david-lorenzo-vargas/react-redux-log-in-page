@@ -59,6 +59,10 @@ const handleSubmitForgottenPasswordButtonClick = () => ({
   type: CONSTANTS.HANLDE_FORGOTTEN_PASSWORD_BUTTON,
 });
 
+const forgottenPasswordButtonClick = () => ({
+  type: CONSTANTS.HANLDE_FORGOTTEN_PASSWORD_BUTTON_CLICK,
+});
+
 const userLogInSuccess = () => ({
   type: CONSTANTS.HANDLE_USER_LOG_IN_SUCCESS,
 });
@@ -84,4 +88,5 @@ export default {
   handleRegisterButtonClick,
   handleForgottenPasswordlInput,
   handleSubmitForgottenPasswordButtonClick,
+  forgottenPasswordButtonClick,
 };
