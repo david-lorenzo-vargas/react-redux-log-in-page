@@ -1,12 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { bindActionCreators } from '@reduxjs/toolkit';
+import actions from '../login/state/users.actions';
 import styles from './forgotten-password-message.scss';
 import { Row, Column } from '../grid';
 import Text from '../text';
+import Button from '../button';
 
 const ForgottenPageMessage = (props) => {
   const { state } = props;
-  const { forgottenEmail, users, forgottenPasswordSubmited } = state;
+  const {
+    forgottenEmail,
+    users,
+    forgottenPasswordSubmited,
+    registerStatus,
+  } = state;
 
   const checkIfUserEmailExists = () => {
     const userEmail = users.map((item) => item.email);
@@ -28,8 +36,30 @@ const ForgottenPageMessage = (props) => {
     return message;
   };
 
+  const handleRegisterButtonClick = () => {
+    props.actions.handleStartRegisterButtonClick();
+  };
+
+  const getTheRegisterButton = () => {
+    const theUserExists = checkIfUserEmailExists();
+    let component;
+
+    if (!theUserExists) {
+      component =
+      (
+        <Button
+          onClick={handleRegisterButtonClick}
+          theme="blue"
+          text="Register"
+        />
+      );
+    }
+
+    return component;
+  };
+
   return (
-    forgottenPasswordSubmited ?
+    forgottenPasswordSubmited && !registerStatus ?
       (
         <div className={styles.message}>
           <Row>
@@ -42,6 +72,11 @@ const ForgottenPageMessage = (props) => {
                 size="extra-big"
                 bold="bold"
               />
+            </Column>
+          </Row>
+          <Row>
+            <Column>
+              {getTheRegisterButton()}
             </Column>
           </Row>
         </div>
@@ -57,4 +92,8 @@ const mapStateToProps = (store) => ({
   },
 });
 
-export default connect(mapStateToProps)(ForgottenPageMessage);
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(actions, dispatch),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ForgottenPageMessage);
