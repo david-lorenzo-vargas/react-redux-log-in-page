@@ -5,6 +5,7 @@ import WelcomePage from './components/welcome-page';
 import RegisterForm from './components/register-form';
 import LoggedInPage from './components/logged-in-page';
 import ForgottenPassword from './components/forgotten-password';
+import ForgottenPasswordMessage from './components/forgotten-passwrod-message';
 
 import styles from './reset.scss';
 
@@ -15,6 +16,7 @@ const App = () => (
       <RegisterForm />
       <LoggedInPage />
       <ForgottenPassword />
+      <ForgottenPasswordMessage />
     </div>
   </div>
 );
