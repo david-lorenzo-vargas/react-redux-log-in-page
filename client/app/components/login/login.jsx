@@ -184,8 +184,8 @@ class Login extends React.Component {
                   link
                   theme="white"
                   size="small"
-                  center="center"
-                  margin="margin"
+                  center
+                  margin
                   onClick={this.handleViewPassword}
                 />
               </Column>
