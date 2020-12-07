@@ -7,10 +7,14 @@ import styles from './welcome-page.scss';
 
 const WelcomePage = (props) => {
   const { state } = props;
-  const { registerStatus, userLoggedIn, forgottenPassword } = state;
+  const {
+    registerStatus,
+    userLoggedIn,
+    forgottenPassword,
+  } = state;
 
   return (
-    registerStatus !== 'started' && !userLoggedIn && !forgottenPassword ?
+    registerStatus !== 'started' && !userLoggedIn && forgottenPassword === '' ?
       (
         <div className={styles.welcome}>
           <Row>
