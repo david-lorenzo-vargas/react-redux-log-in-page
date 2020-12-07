@@ -11,6 +11,14 @@ Did you forget your password? click on FORGOTTEN PASSWORD and enter your email. 
 
 Click on REGISTER button to be redirected to register form, enter yor credential to register yourslef, click on REGISTER and you are ready to log in.
 
+Try to log yourself with one of the following existing users:
+1. **Username:** David Lorenzo **Email:** david-lorenzo@email.com **Password:** 123David
+2. **Username:** John Doe **Email:** john-doe@mail.com **Password:** 123JohnDoe
+3. **Username:** Arthur Smith **Email:** arthur.smith-email@email.com **Password:** thisisnotasecurepassword
+4. **Username:** Mike Mikerson **Email:** mickey_m@myemail.com **Password:** mickeyMouse1972
+5. **Username:** Donald Duke **Email:** d.duke@mail.com **Password:** 123456789D
+6. **Username:** Tom Thanks **Email:** tom_thanks_you@email.com **Password:** Tom1Thanks2!
+
 ## Technologies
 HTML, SCSS(modules, @keyframes), JavaScript, React, Redux, Babel, Webpack, Eslint, Stylelint
 
