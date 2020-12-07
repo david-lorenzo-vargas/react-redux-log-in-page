@@ -36,5 +36,5 @@ Existing user forgotten password
 New user registration
 ![login4](https://user-images.githubusercontent.com/72414745/101411426-3f8e0080-38e1-11eb-89b0-4f6e3c9dee30.gif)
 
-Non existing user needs to register because forgotten password tells the user to do so 
+Non existing user needs to register because forgotten password suggests the user doing so 
 ![login5](https://user-images.githubusercontent.com/72414745/101411429-40269700-38e1-11eb-89ba-e7005e85bd43.gif)
