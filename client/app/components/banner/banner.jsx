@@ -21,11 +21,11 @@ const Banner = (props) => {
           <Logo size="small" />
           <Text
             text="blue vera"
-            bold="bold"
+            bold
             theme="blue"
             size="big"
             type="uppercase"
-            center="center"
+            center
           />
           <Text
             text="- Here for you -"
@@ -35,22 +35,22 @@ const Banner = (props) => {
           <Text
             text="Register"
             size="medium"
-            bold="bold"
-            link="link"
+            bold
+            link
             theme="blue"
-            margin="margin"
+            margin
             onClick={handleStartRegisterButtonClick}
           />
           <Text
             text="Terms and Conditions"
             size="extra-small"
             cursive="italic"
-            link="link"
-            underLine="underline"
+            link
+            underLine
           />
         </div>
       ) :
-      ''
+      null
   );
 };
 
