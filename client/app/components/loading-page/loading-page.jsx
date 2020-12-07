@@ -16,18 +16,17 @@ const LoadingPage = () => (
       <div className={styles.loading__text}>
         <Text
           text="blue vera"
-          bold="bold"
+          bold
           theme="blue"
           size="extra-big"
           type="uppercase"
-          center="center"
+          center
         />
       </div>
       <div className={styles.loading__spinner}>
         <Spinner />
       </div>
     </div>
-
   </div>
 );
 
