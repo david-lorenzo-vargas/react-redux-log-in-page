@@ -61,7 +61,7 @@ const RegisterForm = (props) => {
           />
         </div>
       ) :
-      ''
+      null
   );
 };
 
