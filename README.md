@@ -7,7 +7,7 @@ On the first render, a spinner will be rendered while fetching the users informa
 
 In case you are not registered, click on REGISTER button and a register form will be rendered. Enter your information in each input field and click REGISTER button. The page will redirect you to the first page where you will be able to enter you credentials and see the welcome page welcoming you by your name.
 
-Did you forget your password? click on FORGOTTEN PASSWORD and enter your email. If the email is an existing user email, a message will render render 'CHECK YOUR EMAIL A NEW PASSWORD HAS BEEN SENT' in case the email is not an existing users email address, a message will render saying 'SORRY THI EMAIL DOES NOT EXISTS, PLEASE REGISTER' and a register button will render.
+Did you forget your password? click on FORGOTTEN PASSWORD and enter your email. If the email is an existing user email, a message will render render 'CHECK YOUR EMAIL A NEW PASSWORD HAS BEEN SENT' in case the email is not an existing users email address, a message will render saying 'SORRY THIS EMAIL DOES NOT EXIST, PLEASE REGISTER' and a register button will render.
 
 Click on REGISTER button to be redirected to register form, enter yor credential to register yourslef, click on REGISTER and you are ready to log in.
 
