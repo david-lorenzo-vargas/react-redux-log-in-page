@@ -14,7 +14,7 @@ const defaultState = {
   userNameLogged: '',
   registerStatus: '',
   forgottenEmail: '',
-  forgottenPassword: false,
+  forgottenPassword: '',
   forgottenPasswordSubmited: false,
 };
 
@@ -127,6 +127,7 @@ const handleSubmitForgottenPasswordButtonClick = (state) => {
   const newState = {
     ...state,
     forgottenPasswordSubmited: true,
+    forgottenPassword: 'finished',
   };
 
   return newState;
@@ -135,7 +136,7 @@ const handleSubmitForgottenPasswordButtonClick = (state) => {
 const forgottenPasswordButtonClick = (state) => {
   const newState = {
     ...state,
-    forgottenPassword: true,
+    forgottenPassword: 'started',
   };
 
   return newState;
