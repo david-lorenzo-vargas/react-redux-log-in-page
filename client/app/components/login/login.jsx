@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames/bind';
 import { connect } from 'react-redux';
 import { bindActionCreators } from '@reduxjs/toolkit';
 import actions from './state/users.actions';
@@ -9,6 +10,8 @@ import Button from '../button';
 import usersApi from './state/api';
 import Text from '../text';
 import LoadingPage from '../loading-page';
+
+const cx = classnames.bind(styles);
 
 class Login extends React.Component {
   constructor(props) {
@@ -170,7 +173,10 @@ class Login extends React.Component {
             />
             <Row center>
               <Column>
-                <div className={styles.tickbox} />
+                <div className={cx('tickbox', {
+                  'tickbox--white': inputTypeText,
+                })}
+                />
               </Column>
               <Column>
                 <Text
