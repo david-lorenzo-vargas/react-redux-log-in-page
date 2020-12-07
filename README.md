@@ -23,3 +23,18 @@ Try to log yourself with one of the following existing users:
 HTML, SCSS(modules, @keyframes), JavaScript, React, Redux, Babel, Webpack, Eslint, Stylelint
 
 ## Demo
+
+Existing user Login in
+![login1](https://user-images.githubusercontent.com/72414745/101411421-3dc43d00-38e1-11eb-84f6-e8d9c24b23d2.gif)
+
+Entering wrong your credentials
+![login2](https://user-images.githubusercontent.com/72414745/101411423-3ef56a00-38e1-11eb-894a-376aca4ed365.gif)
+
+Existing user forgotten password
+![login3](https://user-images.githubusercontent.com/72414745/101411424-3ef56a00-38e1-11eb-89bb-9bea7d504976.gif)
+
+New user registration
+![login4](https://user-images.githubusercontent.com/72414745/101411426-3f8e0080-38e1-11eb-89b0-4f6e3c9dee30.gif)
+
+Non existing user needs to register because forgotten password tells the user to do so 
+![login5](https://user-images.githubusercontent.com/72414745/101411429-40269700-38e1-11eb-89ba-e7005e85bd43.gif)
