@@ -16,6 +16,7 @@ const defaultState = {
   forgottenEmail: '',
   forgottenPassword: '',
   forgottenPasswordSubmited: false,
+  inputTypeText: false,
 };
 
 const fetchUsersSuccess = (state, action) => {
@@ -180,6 +181,15 @@ const userLogInSuccess = (state) => {
   return newState;
 };
 
+const handleViewPassword = (state) => {
+  const newState = {
+    ...state,
+    inputTypeText: !state.inputTypeText,
+  };
+
+  return newState;
+};
+
 const loginReducer = (state = defaultState, action) => {
   switch (action.type) {
     case CONSTANTS.FETCH_USERS_SUCCESS: return fetchUsersSuccess(state, action);
@@ -207,6 +217,7 @@ const loginReducer = (state = defaultState, action) => {
       return handleSubmitForgottenPasswordButtonClick(state);
     case CONSTANTS.HANLDE_FORGOTTEN_PASSWORD_BUTTON_CLICK:
       return forgottenPasswordButtonClick(state);
+    case CONSTANTS.HANDLE_PASSWORD_VIEW: return handleViewPassword(state);
 
     default: return state;
   }
