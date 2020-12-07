@@ -20,7 +20,7 @@ const WelcomePage = (props) => {
                 cursive="cursive"
                 type="uppercase"
                 size="extra-big"
-                bold="bold"
+                bold
               />
             </Column>
           </Row>
