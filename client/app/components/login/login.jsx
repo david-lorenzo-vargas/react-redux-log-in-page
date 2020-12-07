@@ -197,11 +197,11 @@ class Login extends React.Component {
             />
             <Text
               text="Forgotten password?"
-              link="link"
+              link
               theme="white"
               size="medium"
-              center="center"
-              margin="margin"
+              center
+              margin
               onClick={this.forgottenPasswordButtonClick}
             />
           </div>
