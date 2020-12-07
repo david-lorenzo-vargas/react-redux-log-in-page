@@ -70,7 +70,7 @@ const ForgottenPageMessage = (props) => {
                 cursive="cursive"
                 type="uppercase"
                 size="extra-big"
-                bold="bold"
+                bold
               />
             </Column>
           </Row>
