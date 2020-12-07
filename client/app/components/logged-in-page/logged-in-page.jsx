@@ -26,7 +26,7 @@ const WelcomePage = (props) => {
           </Row>
         </div>
       ) :
-      ''
+      null
   );
 };
 
