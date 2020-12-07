@@ -165,6 +165,7 @@ const handleRegisterButtonClick = (state) => {
     registerUserEmail: '',
     registerUserPassword: '',
     registerStatus: 'finished',
+    forgottenPassword: '',
   };
 
   return newState;
