@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from '@reduxjs/toolkit';
 import actions from './state/users.actions';
 import styles from './login.scss';
+import { Row, Column } from '../grid';
 import Input from '../input';
 import Button from '../button';
 import usersApi from './state/api';
@@ -18,6 +19,7 @@ class Login extends React.Component {
     this.handleEmailInput = this.handleEmailInput.bind(this);
     this.handlepasswordInput = this.handlepasswordInput.bind(this);
     this.forgottenPasswordButtonClick = this.forgottenPasswordButtonClick.bind(this);
+    this.handleViewPassword = this.handleViewPassword.bind(this);
   }
 
   componentDidMount() {
@@ -79,6 +81,11 @@ class Login extends React.Component {
     return userIslogged;
   }
 
+  handleViewPassword() {
+    // eslint-disable-next-line react/destructuring-assignment
+    this.props.actions.handleViewPassword();
+  }
+
   forgottenPasswordButtonClick() {
     // eslint-disable-next-line react/destructuring-assignment
     this.props.actions.forgottenPasswordButtonClick();
@@ -127,7 +134,12 @@ class Login extends React.Component {
 
   render() {
     const { state } = this.props;
-    const { userTriedToLogIn, fetchUserRequest, userLoggedIn } = state;
+    const {
+      userTriedToLogIn,
+      fetchUserRequest,
+      userLoggedIn,
+      inputTypeText,
+    } = state;
     const wrongUser = !this.checkIfUserExists() && userTriedToLogIn;
 
     return (
@@ -152,10 +164,26 @@ class Login extends React.Component {
             <Input
               onChange={this.handlepasswordInput}
               placeHolder={wrongUser ? 'Oho! wrong password' : 'Password'}
-              type="password"
+              type={!inputTypeText ? 'password' : 'text'}
               value={state.currentUserPassword}
               wrong={wrongUser ? 'wrong' : ''}
             />
+            <Row center>
+              <Column>
+                <div className={styles.tickbox} />
+              </Column>
+              <Column>
+                <Text
+                  text="view password"
+                  link
+                  theme="white"
+                  size="small"
+                  center="center"
+                  margin="margin"
+                  onClick={this.handleViewPassword}
+                />
+              </Column>
+            </Row>
             <Button
               onClick={this.handleButtonClick}
               theme="blue"
