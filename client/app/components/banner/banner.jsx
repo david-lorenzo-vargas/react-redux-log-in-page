@@ -6,61 +6,53 @@ import styles from './banner.scss';
 import Text from '../text';
 import Logo from '../logo';
 
-class Banner extends React.Component {
-  constructor(props) {
-    super(props);
+const Banner = (props) => {
+  const { state } = props;
+  const { fetchUserRequest, userTriedToLogIn } = state;
 
-    this.handleStartRegisterButtonClick = this.handleStartRegisterButtonClick.bind(this);
-  }
+  const handleStartRegisterButtonClick = () => {
+    props.actions.handleStartRegisterButtonClick();
+  };
 
-  handleStartRegisterButtonClick() {
-    // eslint-disable-next-line react/destructuring-assignment
-    this.props.actions.handleStartRegisterButtonClick();
-  }
-
-  render() {
-    const { state } = this.props;
-    const { fetchUserRequest, userTriedToLogIn } = state;
-    return (
-      fetchUserRequest === 'success' || userTriedToLogIn ?
-        (
-          <div className={styles.banner}>
-            <Logo size="small" />
-            <Text
-              text="blue vera"
-              bold="bold"
-              theme="blue"
-              size="big"
-              type="uppercase"
-              center="center"
-            />
-            <Text
-              text="- Here for you -"
-              theme="blue"
-              size="medium"
-            />
-            <Text
-              text="Register"
-              size="medium"
-              bold="bold"
-              link="link"
-              theme="blue"
-              margin="margin"
-              onClick={this.handleStartRegisterButtonClick}
-            />
-            <Text
-              text="Terms and Conditions"
-              size="extra-small"
-              cursive="italic"
-              link="link"
-              underLine="underline"
-            />
-          </div>
-        ) :
-        ''
-    );
-  }
-}
+  return (
+    fetchUserRequest === 'success' || userTriedToLogIn ?
+      (
+        <div className={styles.banner}>
+          <Logo size="small" />
+          <Text
+            text="blue vera"
+            bold="bold"
+            theme="blue"
+            size="big"
+            type="uppercase"
+            center="center"
+          />
+          <Text
+            text="- Here for you -"
+            theme="blue"
+            size="medium"
+          />
+          <Text
+            text="Register"
+            size="medium"
+            bold="bold"
+            link="link"
+            theme="blue"
+            margin="margin"
+            onClick={handleStartRegisterButtonClick}
+          />
+          <Text
+            text="Terms and Conditions"
+            size="extra-small"
+            cursive="italic"
+            link="link"
+            underLine="underline"
+          />
+        </div>
+      ) :
+      ''
+  );
+};
 
 const mapStateToProps = (store) => ({
   state: {
