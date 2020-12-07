@@ -72,6 +72,10 @@ const handleForgottenPasswordlInput = (text) => ({
   payload: text,
 });
 
+const handleViewPassword = () => ({
+  type: CONSTANTS.HANDLE_PASSWORD_VIEW,
+});
+
 export default {
   fetchUsersSuccess,
   fetchUsersPending,
@@ -89,4 +93,5 @@ export default {
   handleForgottenPasswordlInput,
   handleSubmitForgottenPasswordButtonClick,
   forgottenPasswordButtonClick,
+  handleViewPassword,
 };
