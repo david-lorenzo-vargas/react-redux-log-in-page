@@ -6,79 +6,64 @@ import styles from './register-form.scss';
 import Input from '../input';
 import Button from '../button';
 
-class RegisterForm extends React.Component {
-  constructor(props) {
-    super(props);
+const RegisterForm = (props) => {
+  const { state } = props;
+  const {
+    registerUserName,
+    registerUserEmail,
+    registerUserPassword,
+    registerStatus,
+  } = state;
 
-    this.handleRegisterUserNameInput = this.handleRegisterUserNameInput.bind(this);
-    this.handleRegisterEmailInput = this.handleRegisterEmailInput.bind(this);
-    this.handleRegisterPasswordInput = this.handleRegisterPasswordInput.bind(this);
-    this.handleRegisterButtonClick = this.handleRegisterButtonClick.bind(this);
-  }
+  const handleRegisterUserNameInput = (value) => {
+    props.actions.handleRegisterUserNameInput(value);
+  };
 
-  handleRegisterUserNameInput(value) {
-    // eslint-disable-next-line react/destructuring-assignment
-    this.props.actions.handleRegisterUserNameInput(value);
-  }
+  const handleRegisterEmailInput = (value) => {
+    props.actions.handleRegisterEmailInput(value);
+  };
 
-  handleRegisterEmailInput(value) {
-    // eslint-disable-next-line react/destructuring-assignment
-    this.props.actions.handleRegisterEmailInput(value);
-  }
+  const handleRegisterPasswordInput = (value) => {
+    props.actions.handleRegisterPasswordInput(value);
+  };
 
-  handleRegisterPasswordInput(value) {
-    // eslint-disable-next-line react/destructuring-assignment
-    this.props.actions.handleRegisterPasswordInput(value);
-  }
+  const handleRegisterButtonClick = () => {
+    props.actions.handleRegisterButtonClick();
+  };
 
-  handleRegisterButtonClick() {
-    // eslint-disable-next-line react/destructuring-assignment
-    this.props.actions.handleRegisterButtonClick();
-  }
-
-  render() {
-    const { state } = this.props;
-    const {
-      registerUserName,
-      registerUserEmail,
-      registerUserPassword,
-      registerStatus,
-    } = state;
-
-    return (
-      registerStatus === 'started' ?
-        (
-          <div className={styles.form}>
-            <Input
-              onChange={this.handleRegisterUserNameInput}
-              placeHolder="user name"
-              type="text"
-              value={registerUserName}
-              outLine="none"
-            />
-            <Input
-              onChange={this.handleRegisterEmailInput}
-              placeHolder="email"
-              type="text"
-              value={registerUserEmail}
-            />
-            <Input
-              onChange={this.handleRegisterPasswordInput}
-              placeHolder="password"
-              type="password"
-              value={registerUserPassword}
-            />
-            <Button
-              onClick={this.handleRegisterButtonClick}
-              theme="blue"
-              text="Register"
-            />
-          </div>
-        ) :
-        ''
-    );
-  }
-}
+  return (
+    registerStatus === 'started' ?
+      (
+        <div className={styles.form}>
+          <Input
+            onChange={handleRegisterUserNameInput}
+            placeHolder="user name"
+            type="text"
+            value={registerUserName}
+            outLine="none"
+          />
+          <Input
+            onChange={handleRegisterEmailInput}
+            placeHolder="email"
+            type="text"
+            value={registerUserEmail}
+          />
+          <Input
+            onChange={handleRegisterPasswordInput}
+            placeHolder="password"
+            type="password"
+            value={registerUserPassword}
+          />
+          <Button
+            onClick={handleRegisterButtonClick}
+            theme="blue"
+            text="Register"
+          />
+        </div>
+      ) :
+      ''
+  );
+};
 
 const mapStateToProps = (store) => ({
   state: {
