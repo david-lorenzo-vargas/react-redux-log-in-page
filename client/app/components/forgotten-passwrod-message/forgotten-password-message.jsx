@@ -30,7 +30,7 @@ const ForgottenPageMessage = (props) => {
     }
 
     if (!theUserExists) {
-      message = 'Sorry this user is not registered';
+      message = 'Sorry this user does not exist, please register';
     }
 
     return message;
