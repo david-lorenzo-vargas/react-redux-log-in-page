@@ -41,13 +41,6 @@ const Banner = (props) => {
             margin
             onClick={handleStartRegisterButtonClick}
           />
-          <Text
-            text="Terms and Conditions"
-            size="extra-small"
-            cursive="italic"
-            link
-            underLine
-          />
         </div>
       ) :
       null
