@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-// import { Row, Column } from './components/grid';
 import WelcomePage from './components/welcome-page';
 import RegisterForm from './components/register-form';
 import LoggedInPage from './components/logged-in-page';
